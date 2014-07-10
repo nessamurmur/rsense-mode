@@ -7,9 +7,6 @@
 (defvar rsense-client-executable
   (executable-find "_rsense_commandline.rb"))
 
-(defvar cwd
-  (file-name-directory (or load-file-name buffer-file-name)))
-
 (defvar rsense-start-command
   (concat rsense-executable " start --path " cwd))
 
@@ -18,7 +15,7 @@
 
 (defvar autocomplete-command
   (concat rsense-client-executable
-          " --project=" cwd
+          " --project="  default-directory
           " --filepath=" buffer-file-name
           " --text=" (buffer-string)
           " --location=" current-position))
