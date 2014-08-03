@@ -4,13 +4,27 @@ RSense mode is a minor mode for emacs that provides the best autocomplete for Ru
 
 ### Installation
 
+First clone this repo wherever you like
+
 ```
-wget https://raw.githubusercontent.com/niftyn8/rsense-mode/master/rsense-mode.el
-cp rsense-mode.el ~/my/emacs/loadpath
+git clone https://github.com/niftyn8/rsense-mode ~/.emacs.d/rsense-mode
 ```
 
-Then add `(add-hook 'ruby-mode-hook 'rsense-mode)` to your init file.
+Next add it to your emacs load path and require rsense:
+
+```lisp
+(add-to-list 'load-path "~/.emacs.d/rsense-mod")
+(require 'rsense)
+```
+
+Next install the rsense gem
+
+```
+gem install rsense
+```
+
+Once installation has completed run `rsense start` and you're good to go!
 
 ### Usage
 
-Don't yet. Seriously. This is broke as hell.
+As long as you've run `rsense start` simply open a .rb file and press tab to autocomplete!
