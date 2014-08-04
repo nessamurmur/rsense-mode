@@ -1,4 +1,3 @@
-(require 'find-file-in-project)
 (require 'auto-complete)
 (require 'json)
 
@@ -23,7 +22,7 @@
 
 (defun rsense/code-completion-request-body ()
   (json-encode `((command . code_completion)
-                 (project . ,(ffip-project-root))
+                 (project . ,(default-directory))
                  (file . ,buffer-file-name)
                  (code . ,(buffer-string))
                  ;;(code . "")
